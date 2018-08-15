@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Api::V1::Users
   describe SessionsController, type: :request do
     let(:user) { create(:user) }
