@@ -24,6 +24,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'spring'
   gem 'listen'
   gem 'pry'
   gem 'rubocop'

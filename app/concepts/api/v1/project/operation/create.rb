@@ -1,14 +1,12 @@
 # frozen_string_literal: true
+require 'pry'
+module Api::V1
+  class Project::Create < Trailblazer::Operation
 
-class Project < ApplicationRecord
-  class Create < Trailblazer::Operation
-    Model(Project, :create)
+    step Model(Project, :new)
+    step Contract::Build(constant: Project::Contract::Create)
+    step Contract::Validate()
+    step Contract::Persist()
 
-    def process(params)
-      binding.pry
-      validate(params[:comment]) do
-        contract.save
-      end
-    end
   end
 end

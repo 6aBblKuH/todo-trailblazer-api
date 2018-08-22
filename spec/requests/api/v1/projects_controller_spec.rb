@@ -8,7 +8,7 @@ module Api::V1
 
     context 'POST #create' do
       it 'creates project' do
-        expect{ post api_v1_projects_path, headers: headers, params: attributes_for(:project).stringify_keys }.to change(Project, :count).by(1)
+        expect{ post api_v1_projects_path, headers: headers, params: attributes_for(:project).stringify_keys }.to change(::Project, :count).by(1)
       end
     end
   end
