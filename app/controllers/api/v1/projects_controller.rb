@@ -1,16 +1,12 @@
 # frozen_string_literal: true
-
+require 'pry'
 module Api::V1
   class ProjectsController < ApplicationController
     def create
-      # result = run Project::Create
-      result = Project::Create.(params: project_params)
-
-      # @form = result["contract.default"]
-    end
-
-    def project_params
-      params.merge(user_id: current_api_v1_user).permit(:title, :user_id)
+      result = run Project::Create
+      # binding.pry
+      # representer = result['representer.default.class'].superclass
+      # render json: representer.new(@model).to_json
     end
   end
 end

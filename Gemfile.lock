@@ -100,6 +100,7 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
+    multi_json (1.13.1)
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
@@ -159,6 +160,11 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    roar (1.1.0)
+      representable (~> 3.0.0)
+    roar-jsonapi (0.0.3)
+      representable (~> 3.0, >= 3.0.3)
+      roar (~> 1.1)
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.0)
@@ -240,11 +246,13 @@ DEPENDENCIES
   factory_bot_rails
   ffaker
   listen
+  multi_json
   pg
   pry
   puma
   rack-cors
   rails
+  roar-jsonapi
   rspec-rails
   rubocop
   shoulda-matchers
@@ -252,4 +260,4 @@ DEPENDENCIES
   trailblazer-rails
 
 BUNDLED WITH
-   1.16.3
+   1.16.4

@@ -10,6 +10,11 @@ module Api::V1
       it 'creates project' do
         expect{ post api_v1_projects_path, headers: headers, params: attributes_for(:project).stringify_keys }.to change(::Project, :count).by(1)
       end
+
+      it '' do
+        post api_v1_projects_path, headers: headers, params: attributes_for(:project).stringify_keys
+        binding.pry
+      end
     end
   end
 end

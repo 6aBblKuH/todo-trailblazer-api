@@ -9,10 +9,12 @@ end
 
 gem 'devise'
 gem 'devise_token_auth'
+gem 'multi_json'
 gem 'pg'
 gem 'puma'
 gem 'rack-cors'
 gem 'rails'
+gem 'roar-jsonapi'
 gem 'trailblazer-rails'
 
 group :development, :test do
