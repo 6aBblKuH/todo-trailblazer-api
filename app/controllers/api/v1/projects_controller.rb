@@ -1,12 +1,24 @@
 # frozen_string_literal: true
-require 'pry'
 module Api::V1
   class ProjectsController < ApplicationController
+    def index
+      run Project::Index
+      render json: Project::Representer::Resource.for_collection.new(@model).to_json
+    end
+
     def create
-      result = run Project::Create
-      # binding.pry
-      # representer = result['representer.default.class'].superclass
-      # render json: representer.new(@model).to_json
+      run Project::Create
+      render json: Project::Representer::Resource.new(@model).to_json
+    end
+
+    def update
+      run Project::Update
+      render json: Project::Representer::Resource.new(@model).to_json
+    end
+
+    def destroy
+      run Project::Destroy
+      render json: :ok
     end
   end
 end
